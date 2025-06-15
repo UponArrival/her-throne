@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    overflow-y: auto;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #2d2d2d;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 8px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 4px;
+    border: none;
+    box-shadow: none;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: #e6c14b;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Password Modal */
+.password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.password-modal-content {
+    background: #2d2d2d;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 2px solid #d4af37;
+}
+.password-modal-content h2 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+.password-modal-content p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.password-modal-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.password-modal-content button {
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.password-modal-content button:hover {
+    background: #e6c14b;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('../images/throne-bg.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+.hero-content h1 {
+    font-size: 5rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+.tagline-container {
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.tagline {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.hero-content button {
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.hero-content button:hover {
+    background: #e6c14b;
+}
+
+/* Mackenzie's Royal Decrees Section */
+.decrees {
+    padding: 4rem 2rem;
+    background: #1a1a1a;
+    text-align: center;
+    position: relative;
+}
+.decrees h2 {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+.decrees-intro {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+.decrees-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: inside;
+    text-align: left;
+}
+.decrees-list li {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #2d2d2d;
+    border-left: 4px solid #d4af37;
+    border-radius: 4px;
+    line-height: 1.6;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.decrees-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Loyalty Section */
+.loyalty {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.loyalty h2 {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+.loyalty p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.loyalty span {
+    color: #d4af37;
+    font-weight: bold;
+}
+.tribute-btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.tribute-btn:hover {
+    background: #e6c14b;
+}
+.reset-btn {
+    display: block;
+    margin: 1rem auto;
+    background: #ff4444;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.reset-btn:hover {
+    background: #ff6666;
+}
+
+/* Messages of Devotion Section */
+.gallery {
+    padding: 4rem 2rem;
+    background: #2d2d2d;
+    text-align: center;
+    position: relative;
+}
+.gallery h2 {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 2rem;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.devotion-card {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+.devotion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+.devotion-card h3 {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.devotion-card p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'Montserrat', sans-serif;
+}
+.older-messages {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0;
+    background: #1a1a1a;
+    border-radius: 8px;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #2d2d2d;
+}
+.older-messages::-webkit-scrollbar {
+    width: 8px;
+}
+.older-messages::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+.older-messages::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 4px;
+}
+.older-messages::-webkit-scrollbar-thumb:hover {
+    background: #e6c14b;
+}
+.older-messages.hidden {
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+.older-messages.visible {
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 400px;
+}
+.view-all-btn {
+    display: block;
+    margin: 1rem auto 2rem;
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 0.4rem 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.view-all-btn:hover {
+    background: #e6c14b;
+}
+.view-all-btn.hidden {
+    display: none;
+}
+.gallery button:not(.view-all-btn):not(.reset-btn) {
+    display: block;
+    margin: 2rem auto 1rem;
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.gallery button:not(.view-all-btn):not(.reset-btn):hover {
+    background: #e6c14b;
+}
+.placeholder-message {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 8px;
+    text-align: center;
+}
+.placeholder-message p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-family: 'Montserrat', sans-serif;
+}
+.placeholder-message.hidden {
+    display: none;
+}
+
+/* Chronicles of Her Reign Section */
+.chronicles {
+    padding: 4rem 2rem;
+    background: #1a1a1a;
+    text-align: center;
+}
+.chronicles h2 {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+}
+.timeline {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.timeline::-webkit-scrollbar {
+    display: none;
+}
+.timeline-card {
+    flex: 0 0 250px;
+    margin: 0 1rem;
+    background: #2d2d2d;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.timeline-card:hover {
+    transform: scale(1.05);
+}
+.timeline-card .date {
+    display: block;
+    font-size: 0.85rem;
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.timeline-card h3 {
+    font-size: 1.3rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+.timeline-card p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.arrow:hover {
+    background: #e6c14b;
+}
+.left-arrow {
+    left: 10px;
+}
+.right-arrow {
+    right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chronicles h2 {
+        font-size: 2rem;
+    }
+    .timeline {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-snap-type: none;
+        padding: 0;
+        max-height: 70vh;
+        scrollbar-width: thin;
+        scrollbar-color: #d4af37 #2d2d2d;
+    }
+    .timeline::-webkit-scrollbar {
+        width: 8px;
+    }
+    .timeline::-webkit-scrollbar-track {
+        background: #2d2d2d;
+    }
+    .timeline::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 4px;
+    }
+    .timeline::-webkit-scrollbar-thumb:hover {
+        background: #e6c14b;
+    }
+    .timeline-card {
+        flex: 0 0 auto;
+        margin: 1rem 0;
+        padding: 0.75rem;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timeline-card .date {
+        font-size: 0.75rem;
+    }
+    .timeline-card h3 {
+        font-size: 1rem;
+    }
+    .timeline-card p {
+        font-size: 0.75rem;
+    }
+    .arrow {
+        display: none;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: #2d2d2d;
+}
+footer h3 {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #d4af37;
+}
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.footer-nav a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+.footer-nav a:hover {
+    color: #e6c14b;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .password-modal-content h2 {
+        font-size: 1.5rem;
+    }
+    .password-modal-content p {
+        font-size: 0.9rem;
+    }
+    .password-modal-content input {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .password-modal-content button {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    .tagline-container {
+        min-height: 2rem;
+    }
+    .decrees h2 {
+        font-size: 2rem;
+    }
+    .decrees-intro {
+        font-size: 1rem;
+    }
+    .decrees-list li {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    .loyalty h2 {
+        font-size: 2rem;
+    }
+    .gallery h2 {
+        font-size: 2rem;
+    }
+    .view-all-btn {
+        padding: 0.3rem 1rem;
+        font-size: 0.75rem;
+    }
+    .gallery button:not(.view-all-btn):not(.reset-btn) {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    .reset-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    footer h3 {
+        font-size: 1.2rem;
+    }
+    .footer-nav {
+        gap: 1rem;
+    }
+    .footer-nav a {
+        font-size: 0.9rem;
+    }
+}
